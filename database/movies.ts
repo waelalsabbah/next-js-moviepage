@@ -4,7 +4,7 @@ import { $schema } from '../.eslintrc.cjs';
 import { sql } from '../database/connect';
 import { Movie } from '../migrations/00000-createTableMovie';
 
-const movies = [
+const movies1 = [
   {
     id: 1,
     title: 'Marriage Story',
