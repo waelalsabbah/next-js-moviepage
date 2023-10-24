@@ -4,7 +4,7 @@ import styles from './button.module.scss';
 export default function Button() {
   return (
     <button
-      className={styles.logout}
+      /* className={styles.login} */
       onClick={() => {
         console.log('login');
       }}

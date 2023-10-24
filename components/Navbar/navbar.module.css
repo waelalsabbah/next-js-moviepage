@@ -1,0 +1,28 @@
+.container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: #080808;
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.links a:hover {
+  color: #d40000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
