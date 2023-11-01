@@ -8,7 +8,7 @@ genere varchar(40)
 CREATE TABLE users (
     id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     username varchar(80) NOT NULL UNIQUE,
-    passwordHash varchar(80) NOT NULL
+    password_Hash varchar(80) NOT NULL
 
     );
 

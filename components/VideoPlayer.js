@@ -17,7 +17,7 @@ export default function VideoPlayer() {
         <Video publicId={videoUrl} width="550" controls />
       </CloudinaryContext>
       <img
-        src="/images/the iron claw.jpg"
+        src="/poster/the iron claw.jpg"
         width={300}
         height={300}
         className={styles.image}

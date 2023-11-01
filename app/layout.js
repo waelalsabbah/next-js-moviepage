@@ -1,9 +1,15 @@
-import { Inter } from 'next/font/google';
+/* import './globals.css'; */
+import { Inter, Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const bodyFont = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+});
 
 export const metadata = {
   title: { default: ' Home| Willcome Home', Template: '%s |  Willcome Home' },
@@ -12,14 +18,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/*    <div>
-          <Link href="/">Home</Link>
-          <Link href="/video">Video</Link>
-          <Link href="/movies">Movies</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/about">About</Link>
-        </div> */}
+      {/* <body className={inter.className}> */}
+      <body className={bodyFont.className}>
+        <div className="container">
+          {/*  <div>
+             <div className={styles.navLinks}>
+            <Link href="/">Home</Link>
+            <Link href="/video">Video</Link>
+            <Link href="/movies">Movies</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/about">About</Link>
+          </div> */}
+        </div>
+        <nav>
+          <div>
+            {' '}
+            <Link href="/register">Register</Link>{' '}
+            <Link href="/login">Login</Link>
+          </div>
+        </nav>
+
         <Navbar />
         {children}
         <Footer />

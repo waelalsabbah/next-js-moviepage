@@ -1,7 +1,8 @@
+/* import { readFileSync } from 'node:fs'; */
 import postgres from 'postgres';
 import { setEnvironmentVariable } from './util/config.mjs';
 
-export function setEnvironmentVariable() {
+/* export function setEnvironmentVariable() {
   dotenv.config();
 
   const unconfiguredEnvVars = Object.keys(
@@ -14,7 +15,7 @@ export function setEnvironmentVariable() {
       }${unconfiguredEnvVars.join(',')} not configured in .env file`,
     );
   }
-}
+} */
 setEnvironmentVariable();
 
 const sql = postgres();

@@ -1,27 +1,26 @@
-import 'server-only';
 import { cache } from 'react';
 import { $schema } from '../.eslintrc.cjs';
 import { sql } from '../database/connect';
 import { Movie } from '../migrations/00000-createTableMovie';
 
-const movies1 = [
+const movies = [
   {
     id: 1,
     title: 'Marriage Story',
     type: 'movie',
-    genere: 'Comedy, Drama, Romance',
+    genre: 'Comedy, Drama, Romance',
   },
   {
     id: 2,
     title: 'Little Women',
     type: 'movie',
-    genere: 'Drama, Family, Romance',
+    genre: 'Drama, Family, Romance',
   },
   {
     id: 3,
-    title: 'Little Women',
+    title: 'Parasite',
     type: 'movie',
-    genere: 'Drama, Family, Romance',
+    genre: 'Comedy, Drama, Thriller',
   },
 ];
 
