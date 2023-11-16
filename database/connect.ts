@@ -3,12 +3,12 @@ import postgres, { Sql } from 'postgres';
 import { setEnvironmentVariables } from '../util/config.mjs';
 
 setEnvironmentVariables();
-/*  const Sql = postgres({
+/*const Sql = postgres({
   transform: {
     ...postgres.camel,
     undefined: null,
   },
-});  */
+});*/
 declare module globalThis {
   let postgresSqlClient: Sql;
 }
@@ -24,12 +24,12 @@ function connectOneTimeToDatabase() {
       },
     });
   }
-  return (
+  return ((
     ...sqlParameters: Parameters<typeof globalThis.postgresSqlClient>
   ) => {
     headers();
     return globalThis.postgresSqlClient(...sqlParameters);
-  }; /* as typeof globalThis.postgresSqlClient; */
+  }) as typeof globalThis.postgresSqlClient;
 }
 
 export const sql = connectOneTimeToDatabase();

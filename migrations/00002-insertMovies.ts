@@ -15,9 +15,9 @@ const movies = [
   },
   {
     id: 3,
-    title: 'Little Women',
+    title: 'Parasite',
     type: 'movie',
-    genere: 'Drama, Family, Romance',
+    genere: 'Comedy, Drama, Thriller',
   },
 ];
 

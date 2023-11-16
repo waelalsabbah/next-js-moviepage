@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackgroundSection = ({ imageUrl }) => {
+export default function BackgroundSection({ imageUrl }) {
   const sectionStyle = {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: 'cover',
@@ -10,6 +10,4 @@ const BackgroundSection = ({ imageUrl }) => {
   };
 
   return <div style={sectionStyle}>{/* Your content goes here */}</div>;
-};
-
-export default BackgroundSection;
+}

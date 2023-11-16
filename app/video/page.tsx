@@ -11,7 +11,7 @@ export default function Video() {
     <div>
       <h1>My Video Page</h1>
       <a href="https://www.youtube.com/watch?v=cYAcAxWv-14">
-        <button>click me</button>
+        <button>click</button>
       </a>
       <VideoPlayer />
     </div>

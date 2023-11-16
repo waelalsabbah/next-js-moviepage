@@ -1,4 +1,4 @@
-* {
+/* *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -18,8 +18,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #111;
-  color: #bbb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,4 +36,43 @@ body {
 }
 .error {
   color: #d32f2f;
+}
+.light {
+  background-color: #bbb;
+  color: #111;
+}
+.dark {
+  background-color: #111;
+  color: #bbb;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* .dark {
+  @apply bg-gray-900 text-white;
+} */
+/* From https://css.glass */
+/* styles/globals.css */
+@media (prefers-color-scheme: light) {
+  /* Light Mode Styles */
+  body {
+    background-color: #ffffff;
+    color: #333333;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #1a202c;
+    color: #ffffff;
+  }
+}
+.container {
+  background: rgba(233, 135, 135, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(233, 135, 135, 0.34);
 }
