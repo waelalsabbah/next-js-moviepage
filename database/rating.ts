@@ -7,7 +7,7 @@ export const createRating = cache(async (userId: number, rating: string) => {
   const [rate] = await sql<
     { id: number; userId: number | null; rating: string }[]
   >`
- INSERT INTO notes
+ INSERT INTO rating
  (user_id,rating)
  VALUES
  (${userId},${rating})

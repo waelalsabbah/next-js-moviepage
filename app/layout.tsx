@@ -3,10 +3,10 @@
 import { Inter, Montserrat } from 'next/font/google';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { useState } from 'react';
 import Footer from '../components/Footer/Footer';
-import Navbar from '../components/Navbar/Navbar';
+import SearchMoviePage from '../components/SearchText/SearchText';
 import { getUserBySessionToken } from '../database/users';
+import DarkModeToggle from '../LocalStorage';
 import LogoutButton from './(auth)/logout/LogoutButton';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -30,40 +30,60 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      {/* <body className={inter.className}>  */}
       <body className={bodyFont.className}>
-        {/* <div className="container">
-          <div>
-            <div className={styles.navLinks}>
-              <Link href="/">Home</Link>
-              <Link href="/video">Video</Link>
-              <Link href="/movies">Movies</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/about">About</Link>
-            </div>
-          </div>
-        </div> */}
-        <nav>
-          <div>
-            {user ? (
-              <>
-                <div>Hello: {user.username}</div>
+        <nav className="bg-blue-500 p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <div className="text-white">
+              {/* Logo with the name "MOVIEDB" */}
+              <div className="flex items-center">
+                <span className="text-xl font-bold">MOVIEDB</span>
+              </div>
 
-                <LogoutButton />
-              </>
-            ) : (
-              <>
-                <Link href="/register">Register</Link>
-                <br />
-                <Link href="/login">Login</Link>
-              </>
-            )}
+              {/* Navigation links */}
+              <div className="mt-2">
+                <Link href="/" className="mr-4 text-white">
+                  Home
+                </Link>
+                <Link href="/upcoming" className="mr-4 text-white">
+                  Upcoming
+                </Link>
+                <Link href="/movies" className="mr-4 text-white">
+                  Trending
+                </Link>
+                <Link href="/contact" className="mr-4 text-white">
+                  Contact
+                </Link>
+                <Link href="/about" className="mr-4 text-white">
+                  About
+                </Link>
+              </div>
+            </div>
+
+            {/* User information and search */}
+            <div className="flex items-center">
+              <SearchMoviePage />
+
+              {user ? (
+                <>
+                  <div className="text-white mr-4">Hello: {user.username}</div>
+                  <LogoutButton />
+                </>
+              ) : (
+                <>
+                  <Link href="/register" className="text-white mr-4">
+                    Register
+                  </Link>
+                  <Link href="/login" className="text-white">
+                    Login
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </nav>
 
-        <Navbar />
-
         {children}
+
         <Footer />
       </body>
     </html>

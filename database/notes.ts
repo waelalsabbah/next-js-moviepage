@@ -2,7 +2,6 @@ import { cache } from 'react';
 import { Note } from '../migrations/00004-createTableNotes';
 import { sql } from './connect';
 
-// Add rating
 export const createNote = cache(async (userId: number, textContent: string) => {
   const [note] = await sql<
     { id: number; userId: number | null; textContent: string }[]

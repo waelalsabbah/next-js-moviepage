@@ -48,7 +48,7 @@ export async function POST(
       { status: 401 },
     );
   }
-  // Add ratings
+
   const newNote = await createNote(result.data.userId, result.data.textContent);
 
   if (!newNote) {
