@@ -1,15 +1,12 @@
-/* import './globals.css'; */
-
-import { Inter, Montserrat } from 'next/font/google';
+import './globals.css';
+import 'tailwindcss/tailwind.css';
+import { Montserrat } from 'next/font/google';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import Footer from '../components/Footer/Footer';
 import SearchMoviePage from '../components/SearchText/SearchText';
 import { getUserBySessionToken } from '../database/users';
-import DarkModeToggle from '../LocalStorage';
 import LogoutButton from './(auth)/logout/LogoutButton';
-
-const inter = Inter({ subsets: ['latin'] });
 
 const bodyFont = Montserrat({
   subsets: ['latin'],
@@ -30,11 +27,12 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={bodyFont.className}>
-        <nav className="bg-blue-500 p-4">
+      <body className={`${bodyFont.className} font-serif`}>
+        <nav className="bg-purple-800 p-4">
+          {' '}
+          {/* Specify font-sans for the entire nav */}
           <div className="container mx-auto flex justify-between items-center">
             <div className="text-white">
-              {/* Logo with the name "MOVIEDB" */}
               <div className="flex items-center">
                 <span className="text-xl font-bold">MOVIEDB</span>
               </div>
@@ -58,11 +56,9 @@ export default async function RootLayout({ children }) {
                 </Link>
               </div>
             </div>
-
+            <SearchMoviePage />
             {/* User information and search */}
             <div className="flex items-center">
-              <SearchMoviePage />
-
               {user ? (
                 <>
                   <div className="text-white mr-4">Hello: {user.username}</div>

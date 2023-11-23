@@ -42,7 +42,7 @@ export const metadata = {
 };
 
 export default function VideoPlayer() {
-  const videoRef = useRef();
+  /* const videoRef = useRef(); */
   const cloudName = 'dxaudtsar';
   const videoUrl = 'Video_Background_loop_HD_Free_bkld97';
 

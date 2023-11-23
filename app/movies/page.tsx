@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+import '../globals.css';
 import Head from 'next/head';
 import Link from 'next/link';
 

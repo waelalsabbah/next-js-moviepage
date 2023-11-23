@@ -20,11 +20,11 @@ export default function SearchMoviePage() {
         type="text"
         placeholder="Search a Movie..."
         onChange={(event) => setSearchText(event.currentTarget.value)}
-        className="border rounded-l px-4 py-2 focus:outline-none"
+        className="border rounded-l p-2 focus:outline-none"
       />
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700 focus:outline-none"
+        className="bg-teal-500 text-white px-4 py-2 rounded-r hover:bg-teal-700 focus:outline-none"
       >
         Search
       </button>

@@ -1,14 +1,10 @@
+import 'server-only';
 import { headers } from 'next/headers';
 import postgres, { Sql } from 'postgres';
 import { setEnvironmentVariables } from '../util/config.mjs';
 
 setEnvironmentVariables();
-/*const Sql = postgres({
-  transform: {
-    ...postgres.camel,
-    undefined: null,
-  },
-});*/
+
 declare module globalThis {
   let postgresSqlClient: Sql;
 }
@@ -18,12 +14,22 @@ declare module globalThis {
 function connectOneTimeToDatabase() {
   if (!('postgresSqlClient' in globalThis)) {
     globalThis.postgresSqlClient = postgres({
+      ssl: Boolean(process.env.POSTGRES_URL),
       transform: {
         ...postgres.camel,
         undefined: null,
       },
     });
   }
+
+  // Use Next.js Dynamic Rendering in all database queries:
+  //
+  // Wrap sql`` tagged template function to call `noStore()` from
+  // next/cache before each database query. `noStore()` is a
+  // Next.js Dynamic Function, which causes the page to use
+  // Dynamic Rendering
+  //
+  // https://nextjs.org/docs/app/building-your-application/rendering/static-and-dynamic-rendering
   return ((
     ...sqlParameters: Parameters<typeof globalThis.postgresSqlClient>
   ) => {
@@ -32,9 +38,5 @@ function connectOneTimeToDatabase() {
   }) as typeof globalThis.postgresSqlClient;
 }
 
+// Connect to PostgreSQL
 export const sql = connectOneTimeToDatabase();
-export async function getallMoviesFromDatabase() {
-  const movies = await sql`SELECT * FROM movies`;
-
-  return movies;
-}

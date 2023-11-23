@@ -1,3 +1,4 @@
+import '../../globals.css';
 import React from 'react';
 import { Logout } from './actions';
 
@@ -7,7 +8,7 @@ export default function LogoutButton() {
       <button
         type="submit"
         formAction={Logout}
-        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Logout
       </button>

@@ -1,3 +1,4 @@
+import '../../globals.css';
 import 'tailwindcss/tailwind.css';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -99,6 +100,7 @@ export default async function MoviePage(props: Props) {
         <div className="border border-gray-300 p-4 rounded-md">
           <p className="text-base font-bold mb-4">Overview: {movie.overview}</p>
         </div>
+        <br />
         {/*   <h4 className="text-lg font-bold mb-2">
           Visit and get your Ticket:
           <br />
@@ -113,6 +115,7 @@ export default async function MoviePage(props: Props) {
         </h4> */}
         <h4 className="text-lg font-bold mb-2">
           Where to watch and Trailer:
+          <br />
           <br />
           <a
             className="text-blue-500 inline-block px-4 py-2 rounded-md border border-blue-500 hover:bg-blue-500 hover:text-white transition duration-300"
