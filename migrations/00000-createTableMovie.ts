@@ -8,10 +8,10 @@ export type Movie = {
 };
 export async function up(sql: Sql) {
   await sql`CREATE TABLE movies (
-    id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    title varchar(30) NOT NULL,
-    type varchar(30) NOT NULL,
-    genre varchar(30)
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(30) NOT NULL,
+    type VARCHAR(30) NOT NULL,
+    genre VARCHAR(30)
     );
     `;
 }

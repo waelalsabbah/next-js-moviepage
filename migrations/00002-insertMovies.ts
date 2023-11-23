@@ -5,26 +5,26 @@ const movies = [
     id: 1,
     title: 'Marriage Story',
     type: 'movie',
-    genere: 'Comedy, Drama, Romance',
+    genre: 'Comedy, Drama, Romance',
   },
   {
     id: 2,
     title: 'Little Women',
     type: 'movie',
-    genere: 'Drama, Family, Romance',
+    genre: 'Drama, Family, Romance',
   },
   {
     id: 3,
     title: 'Parasite',
     type: 'movie',
-    genere: 'Comedy, Drama, Thriller',
+    genre: 'Comedy, Drama, Thriller',
   },
 ];
 
 export async function up(sql: Sql) {
   for (const movie of movies) {
-    await sql`INSERT INTO movies(title,type,genere)
-  VALUES(${movie.title},${movie.type},${movie.genere})`;
+    await sql`INSERT INTO movies(title,type,genre)
+  VALUES(${movie.title},${movie.type},${movie.genre})`;
   }
 }
 
