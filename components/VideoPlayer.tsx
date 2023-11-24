@@ -62,6 +62,15 @@ export default function VideoPlayer() {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         <h1 className="text-4xl font-bold mb-4">Welcome to your MOVIEDB</h1>
         {/* Add additional content here if needed */}
+        <p className="text-lg mb-8">
+          Explore a vast collection of movies at your fingertips. Our MOVIEDB
+          brings you a curated selection of the latest releases, timeless
+          classics, and hidden gems. Immerse yourself in the world of cinema
+          right from the comfort of your home. Whether you're a film buff or
+          just looking for something new to watch, our MOVIEDB has something for
+          everyone. Enjoy the ultimate cinematic experience with high-quality
+          videos and a user-friendly interface. Start your movie journey today!
+        </p>
       </div>
     </div>
   );

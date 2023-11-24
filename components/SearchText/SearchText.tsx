@@ -24,7 +24,7 @@ export default function SearchMoviePage() {
       />
       <button
         type="submit"
-        className="bg-teal-500 text-white px-4 py-2 rounded-r hover:bg-teal-700 focus:outline-none"
+        className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700 focus:outline-none"
       >
         Search
       </button>

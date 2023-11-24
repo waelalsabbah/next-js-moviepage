@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       extend: {
         fontFamily: {
-          display: ['Geologica', 'sans-serif'],
+          sans: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
         },
       },
     },
