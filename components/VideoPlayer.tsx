@@ -34,6 +34,7 @@ export default function VideoPlayer() {
 // VideoPlayer.js
 
 import { CloudinaryContext, Video } from 'cloudinary-react';
+import Link from 'next/link';
 import { useRef } from 'react';
 
 export const metadata = {
@@ -59,8 +60,11 @@ export default function VideoPlayer() {
           className="w-full h-full object-cover"
         />
       </CloudinaryContext>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-        <h1 className="text-4xl font-bold mb-4">Welcome to your MOVIEDB</h1>
+      <div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white"
+        style={{ fontFamily: "'YourCustomFont', sans-serif" }}
+      >
+        <h1 className="text-4xl font-bold mb-4">WELCOME TO MOVIEDB</h1>
         {/* Add additional content here if needed */}
         <p className="text-lg mb-8">
           Explore a vast collection of movies at your fingertips. Our MOVIEDB
@@ -71,6 +75,14 @@ export default function VideoPlayer() {
           everyone. Enjoy the ultimate cinematic experience with high-quality
           videos and a user-friendly interface. Start your movie journey today!
         </p>
+        <Link href="/login">
+          <button
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );

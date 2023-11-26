@@ -82,27 +82,5 @@ export default function RegisterForm() {
         ))}
       </form>
     </div>
-
-    /*  <div>
-      <form onSubmit={async (event) => await handleRegister(event)}>
-        <label>
-          Username
-          <input onChange={(event) => setUsername(event.currentTarget.value)} />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            onChange={(event) => setPassword(event.currentTarget.value)}
-          />
-        </label>
-        <button> Register</button>
-        {errors.map((error) => (
-          <div className="error" key={`error-${error.message}`}>
-            Error:{error.message}
-          </div>
-        ))}
-      </form>
-    </div> */
   );
 }

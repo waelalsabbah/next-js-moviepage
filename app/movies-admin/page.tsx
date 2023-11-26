@@ -1,6 +1,4 @@
 import { cookies } from 'next/headers';
-import Image from 'next/image';
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getMovies } from '../../database/movies';
 import { getValidSessionByToken } from '../../database/sessions';

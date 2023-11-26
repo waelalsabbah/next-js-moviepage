@@ -101,18 +101,7 @@ export default async function MoviePage(props: Props) {
           <p className="text-base font-bold mb-4">Overview: {movie.overview}</p>
         </div>
         <br />
-        {/*   <h4 className="text-lg font-bold mb-2">
-          Visit and get your Ticket:
-          <br />
-          <a
-            className="text-blue-500"
-            href={movie.homepage}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {movie.homepage}
-          </a>
-        </h4> */}
+
         <h4 className="text-lg font-bold mb-2">
           Where to watch and Trailer:
           <br />

@@ -50,7 +50,7 @@ export default async function SearchPage(props: Props) {
         <title>{metadata.title.default}</title>
         <meta name="description" content={metadata.description} />
       </Head>
-      <h1 className="text-3xl font-bold mb-6">Trending Movies</h1>
+      <h1 className="text-3xl font-bold mb-6"></h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {movies.map((movie) => (
           <Link
